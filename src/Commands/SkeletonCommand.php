@@ -4,9 +4,6 @@ namespace VendorName\Skeleton\Commands;
 
 use Illuminate\Console\Command;
 
-
-require __FILE__ . '../../../../configure.php';
-
 class SkeletonCommand extends Command
 {
     public $signature = 'role:install';
@@ -151,7 +148,7 @@ class SkeletonCommand extends Command
 
     ';
 
-        replace_in_file(
+        $this->replace_in_file(
             'database/factories/UserFactory.php',
             [
                 '];
@@ -166,7 +163,7 @@ class SkeletonCommand extends Command
             ]
         );
 
-        replace_in_file(
+        $this->replace_in_file(
             'database/seeders/DatabaseSeeder.php',
             [
                 '];
@@ -200,5 +197,19 @@ class SkeletonCommand extends Command
         }
 
         file_put_contents($fullPath, $contents, $flags);
+    }
+
+    public function replace_in_file(string $file, array $replacements): void
+    {
+        $contents = file_get_contents($file);
+
+        file_put_contents(
+            $file,
+            str_replace(
+                array_keys($replacements),
+                array_values($replacements),
+                $contents
+            )
+        );
     }
 }
