@@ -3,7 +3,8 @@
 namespace VendorName\Skeleton\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
+
+require __FILE__ . '../../../../configure.php';
 
 class SkeletonCommand extends Command
 {
