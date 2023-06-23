@@ -4,8 +4,7 @@ namespace VendorName\Skeleton\Commands;
 
 use Illuminate\Console\Command;
 
-
-require __FILE__ . '../../../../configure.php';
+require __FILE__.'../../../../configure.php';
 
 class SkeletonCommand extends Command
 {
@@ -195,7 +194,7 @@ class SkeletonCommand extends Command
         array_pop($parts);
         $dir = implode('/', $parts);
 
-        if (!is_dir($dir)) {
+        if (! is_dir($dir)) {
             mkdir($dir, 0777, true);
         }
 
