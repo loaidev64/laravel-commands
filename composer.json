@@ -1,12 +1,12 @@
 {
-    "name": ":vendor_slug/:package_slug",
+    "name": "loaidev64/laravel-commands",
     "description": ":package_description",
     "keywords": [
         ":vendor_name",
         "laravel",
-        ":package_slug"
+        "laravel-commands"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/loaidev64/laravel-commands",
     "license": "MIT",
     "authors": [
         {
