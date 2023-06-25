@@ -2,9 +2,9 @@
 
 namespace LoaiDev64\LaravelCommands;
 
+use LoaiDev64\LaravelCommands\Commands\InstallRoleConfigurationCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LoaiDev64\LaravelCommands\Commands\InstallRoleConfigurationCommand;
 
 class LaravelCommandsServiceProvider extends PackageServiceProvider
 {
