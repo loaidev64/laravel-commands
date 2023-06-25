@@ -42,6 +42,10 @@ class InstallRoleConfigurationCommand extends Command
 
             $this->warn('add auth file to routes/api.php');
 
+            $this->copyStubToApp('role/LoginRequest', 'app/Http/Requests/Api/V1/Auth/LoginRequest.php');
+
+            $this->copyStubToApp('role/LoginRequest', 'app/Http/Requests/Api/V1/Auth/LoginRequest.php');
+
             $this->copyStubToApp('role/RegisterationController', 'app/Http/Controllers/Api/V1/Auth/RegisterationController.php');
         }
 

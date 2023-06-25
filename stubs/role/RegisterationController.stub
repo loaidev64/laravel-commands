@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Auth\LoginRequest;
 use App\Http\Requests\Api\Auth\RegisterRequest;
 use App\Services\Auth\RegisterationService;
+use App\Models\User;
 
 class RegisterationController extends Controller
 {
@@ -19,7 +20,7 @@ class RegisterationController extends Controller
             ], 400);
         }
 
-        $token = $user->createToken('token)->plainTextToken;
+        $token = $user->createToken('token')->plainTextToken;
 
         return response(['token' => $token]);
     }
@@ -28,7 +29,7 @@ class RegisterationController extends Controller
     {
         $user = User::create($request->validated());
 
-        $token = $user->createToken('token)->plainTextToken;
+        $token = $user->createToken('token')->plainTextToken;
 
         return response(['token' => $token]);
     }
