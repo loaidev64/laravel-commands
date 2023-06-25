@@ -29,7 +29,7 @@ class InstallRoleConfigurationCommand extends Command
 
         $this->warn('add role relationship in app/Models/User.php');
 
-        $this->comment('All done');
+        $this->info('All done');
 
         return self::SUCCESS;
     }
