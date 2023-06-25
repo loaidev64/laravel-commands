@@ -43,7 +43,7 @@ class InstallRoleConfigurationCommand extends Command
 
             $this->copyStubToApp('role/LoginRequest', 'app/Http/Requests/Api/V1/Auth/LoginRequest.php');
 
-            $this->copyStubToApp('role/LoginRequest', 'app/Http/Requests/Api/V1/Auth/LoginRequest.php');
+            $this->copyStubToApp('role/RegisterRequest', 'app/Http/Requests/Api/V1/Auth/RegisterRequest.php');
 
             $this->copyStubToApp('role/RegisterationController', 'app/Http/Controllers/Api/V1/Auth/RegisterationController.php');
         }
