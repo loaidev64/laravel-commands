@@ -1,9 +1,9 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace LoaiDev64\LaravelCommands\Commands;
 
 use Illuminate\Console\Command;
-use VendorName\Skeleton\Traits\CanManipulateFiles;
+use LoaiDev64\LaravelCommands\Traits\CanManipulateFiles;
 
 class InstallRoleConfigurationCommand extends Command
 {
@@ -27,7 +27,13 @@ class InstallRoleConfigurationCommand extends Command
 
         $this->copyStubToApp('role/DatabaseSeeder', 'database/seeders/DatabaseSeeder.php');
 
-        $this->warn('add role relationship in app/Models/User.php');
+        $this->copyStubToApp('role/HasRole', 'app/Traits/HasRole.php');
+
+        $this->copyStubToApp('role/HasRoleMiddleware', 'app/Http/Middleware/HasRoleMiddleware.php');
+
+        $this->warn('add role relationship, and HasRole trait to app/Models/User.php');
+
+        $this->warn('add middleware alias to app/Http/Kernel.php');
 
         $this->info('All done');
 

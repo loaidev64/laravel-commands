@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace LoaiDev64\LaravelCommands;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\InstallRoleConfigurationCommand;
+use LoaiDev64\LaravelCommands\Commands\InstallRoleConfigurationCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelCommandsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -17,6 +17,6 @@ class SkeletonServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-commands')
-            ->hasCommand(InstallRoleConfigurationCommand::class);
+            ->hasCommands(InstallRoleConfigurationCommand::class);
     }
 }

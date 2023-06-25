@@ -1,8 +1,8 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace LoaiDev64\LaravelCommands;
 
-class Skeleton
+class LaravelCommands
 {
     public function replace_in_file(string $file, array $replacements): void
     {

@@ -61,8 +61,8 @@ php artisan vendor:publish --tag="laravel-commands-views"
 ## Usage
 
 ```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
+$variable = new LoaiDev64\LaravelCommands();
+echo $variable->echoPhrase('Hello, LoaiDev64!');
 ```
 
 ## Testing
