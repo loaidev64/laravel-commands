@@ -21,10 +21,16 @@ class HasRoleMiddleware
             throw new AuthenticationException;
         }
 
+        $hasRole = false;
         foreach ($roles as $role) {
-            if (!auth()->user()->hasRole($role)) {
-                throw new AuthorizationException;
+            if (auth()->user()->hasRole($role)) {
+                $hasRole = true;
+                break;
             }
+        }
+
+        if (!$hasRole) {
+            throw new AuthorizationException;
         }
         return $next($request);
     }
