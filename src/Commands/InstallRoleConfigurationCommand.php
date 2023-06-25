@@ -9,7 +9,7 @@ class InstallRoleConfigurationCommand extends Command
 {
     use CanManipulateFiles;
 
-    public $signature = 'role:install';
+    public $signature = 'role:install {--auth}';
 
     public $description = 'Install role configuration';
 
@@ -34,6 +34,16 @@ class InstallRoleConfigurationCommand extends Command
         $this->warn('add role relationship, and HasRole trait to app/Models/User.php');
 
         $this->warn('add middleware alias to app/Http/Kernel.php');
+
+
+        if ($this->option('auth')) {
+
+            $this->copyStubToApp('role/RegisterationRoutes', 'routes/api/v1/auth.php');
+
+            $this->warn('add auth file to routes/api.php');
+
+            $this->copyStubToApp('role/RegisterationController', 'app/Http/Controllers/Api/V1/Auth/RegisterationController.php');
+        }
 
         $this->info('All done');
 
