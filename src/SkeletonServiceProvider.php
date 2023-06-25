@@ -4,7 +4,7 @@ namespace VendorName\Skeleton;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use VendorName\Skeleton\Commands\InstallRoleConfigurationCommand;
 
 class SkeletonServiceProvider extends PackageServiceProvider
 {
@@ -16,10 +16,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->name('laravel-commands')
+            ->hasCommand(InstallRoleConfigurationCommand::class);
     }
 }
