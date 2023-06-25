@@ -35,7 +35,6 @@ class InstallRoleConfigurationCommand extends Command
 
         $this->warn('add middleware alias to app/Http/Kernel.php');
 
-
         if ($this->option('auth')) {
 
             $this->copyStubToApp('role/RegisterationRoutes', 'routes/api/v1/auth.php');
