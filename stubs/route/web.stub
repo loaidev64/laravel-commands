@@ -1,7 +1,6 @@
 <?php
 
 use App\Helpers\Route\RouteHelper;
-use App\Http\Controllers\Api\V1\Application\Auth\AuthenticationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(function () {
-    RouteHelper::includeRouteFiles(__DIR__ . '/web/');
-});
+RouteHelper::includeRouteFiles(__DIR__ . '/web/');
 
