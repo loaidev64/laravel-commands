@@ -15,8 +15,8 @@ class MakeServiceCommand extends Command
 
     public function handle(): int
     {
-        $this->copyStubToApp('service/ServiceClass', 'app/Services/' . $this->argument('service') . '.php', [
-            'namespace' => 'App\Services' . $this->argument('service'),
+        $this->copyStubToApp('service/ServiceClass', 'app/Services/'.$this->argument('service').'.php', [
+            'namespace' => 'App\Services'.$this->argument('service'),
             'name' => $this->argument('service'),
         ]);
 
