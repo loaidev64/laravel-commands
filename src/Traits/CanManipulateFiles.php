@@ -3,9 +3,9 @@
 namespace LoaiDev64\LaravelCommands\Traits;
 
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use ReflectionClass;
-use Illuminate\Support\Facades\File;
 
 trait CanManipulateFiles
 {
@@ -26,8 +26,8 @@ trait CanManipulateFiles
     {
         $filesystem = app(Filesystem::class);
 
-        if (!$this->fileExists($stubPath = base_path("stubs/laravel-commands/{$stub}.stub"))) {
-            $stubPath = $this->getDefaultStubPath() . "/{$stub}.stub";
+        if (! $this->fileExists($stubPath = base_path("stubs/laravel-commands/{$stub}.stub"))) {
+            $stubPath = $this->getDefaultStubPath()."/{$stub}.stub";
         }
 
         $stub = Str::of($filesystem->get($stubPath));
