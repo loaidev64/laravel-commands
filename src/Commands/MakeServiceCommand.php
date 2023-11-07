@@ -4,6 +4,7 @@ namespace LoaiDev64\LaravelCommands\Commands;
 
 use Illuminate\Console\Command;
 use LoaiDev64\LaravelCommands\Traits\CanManipulateFiles;
+use Illuminate\Support\Str;
 
 class MakeServiceCommand extends Command
 {
@@ -16,8 +17,9 @@ class MakeServiceCommand extends Command
     public function handle(): int
     {
         $this->copyStubToApp('service/ServiceClass', 'app/Services/' . $this->argument('service') . '.php', [
-            'namespace' => 'App\Services' . $this->argument('service'),
-            'name' => $this->argument('service'),
+            'namespace' => 'App\Services' . str_replace('/', '\\', $this->argument('service')),
+            'name' => Str::of($this->argument('service'))
+                ->afterLast('/'),
         ]);
 
         $this->info('All done');
