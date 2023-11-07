@@ -3,6 +3,7 @@
 namespace LoaiDev64\LaravelCommands;
 
 use LoaiDev64\LaravelCommands\Commands\InstallRoleConfigurationCommand;
+use LoaiDev64\LaravelCommands\Commands\InstallRouteConfigurationCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,6 +18,6 @@ class LaravelCommandsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-commands')
-            ->hasCommands(InstallRoleConfigurationCommand::class);
+            ->hasCommands(InstallRoleConfigurationCommand::class, InstallRouteConfigurationCommand::class);
     }
 }
