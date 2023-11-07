@@ -5,6 +5,7 @@ namespace LoaiDev64\LaravelCommands\Traits;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 use ReflectionClass;
+use Illuminate\Support\Facades\File;
 
 trait CanManipulateFiles
 {
@@ -25,8 +26,8 @@ trait CanManipulateFiles
     {
         $filesystem = app(Filesystem::class);
 
-        if (! $this->fileExists($stubPath = base_path("stubs/laravel-commands/{$stub}.stub"))) {
-            $stubPath = $this->getDefaultStubPath()."/{$stub}.stub";
+        if (!$this->fileExists($stubPath = base_path("stubs/laravel-commands/{$stub}.stub"))) {
+            $stubPath = $this->getDefaultStubPath() . "/{$stub}.stub";
         }
 
         $stub = Str::of($filesystem->get($stubPath));
@@ -57,6 +58,11 @@ trait CanManipulateFiles
         );
 
         $filesystem->put($path, $contents);
+    }
+
+    protected function createDirectory(string $path): void
+    {
+        File::makeDirectory($path);
     }
 
     protected function getDefaultStubPath(): string

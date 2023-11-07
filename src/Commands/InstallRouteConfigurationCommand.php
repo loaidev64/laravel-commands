@@ -21,7 +21,15 @@ class InstallRouteConfigurationCommand extends Command
 
         $this->copyStubToApp('route/web', 'routes/web.php');
 
+        $this->createDirectory('routes/api/v1');
+
+        $this->createDirectory('routes/web');
+
         $this->info('All done');
+
+        $this->info('Now you can add api routes files in routes/api/v1 folder and they will magically be imported in routes');
+
+        $this->info('Now you can add web routes files in routes/web folder and they will magically be imported in routes');
 
         return self::SUCCESS;
     }
