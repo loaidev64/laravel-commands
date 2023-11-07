@@ -15,7 +15,7 @@ class InstallRouteConfigurationCommand extends Command
 
     public function handle(): int
     {
-        $this->copyStubToApp('route/RouteHelper', 'app/Helpers/RouteHelper.php');
+        $this->copyStubToApp('route/RouteHelper', 'app/Helpers/Route/RouteHelper.php');
 
         $this->copyStubToApp('route/api', 'routes/api.php');
 
