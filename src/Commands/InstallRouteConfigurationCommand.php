@@ -21,6 +21,8 @@ class InstallRouteConfigurationCommand extends Command
 
         $this->copyStubToApp('route/web', 'routes/web.php');
 
+        $this->createDirectory('routes/api');
+
         $this->createDirectory('routes/api/v1');
 
         $this->createDirectory('routes/web');
